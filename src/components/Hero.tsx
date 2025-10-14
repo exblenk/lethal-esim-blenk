@@ -18,9 +18,9 @@ const Hero = () => {
       <div className="container relative z-10 px-4 py-20 animate-fade-in">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h1 className="text-3xl md:text-5xl font-bold leading-tight animate-scale-in">
-            شرائح eSIM لمعظم دول العالم
+            شرائح eSIM دول عربية وجلوبال
             <span className="block gradient-gold bg-clip-text text-transparent mt-2">
-              بأفضل الأسعار
+              بأفضل سعر
             </span>
           </h1>
           

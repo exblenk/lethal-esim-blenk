@@ -8,13 +8,11 @@ const SchemaMarkup = () => {
       "name": "ExBlenk",
       "url": "https://lovable.app",
       "logo": "https://lovable.app/logo.png",
-      "description": "مزود خدمة eSIM عالمي يغطي أكثر من 50 دولة حول العالم بأفضل الأسعار",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+201060103226",
         "contactType": "customer service",
-        "availableLanguage": ["ar", "en"],
-        "areaServed": ["Worldwide", "SA", "EG", "AE", "TR", "US", "GB", "DE", "FR"]
+        "availableLanguage": ["ar", "en"]
       },
       "sameAs": [
         "https://wa.me/201060103226",
