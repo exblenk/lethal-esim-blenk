@@ -56,7 +56,7 @@ const PaymentMethods = () => {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground">
-            🔒 جميع المعاملات مشفرة ومؤمنة بالكامل
+            🔒 جميع المعاملات آمنة
           </p>
         </div>
       </div>
