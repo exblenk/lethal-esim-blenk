@@ -17,7 +17,6 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <Features />
         <Pricing />
         <div id="countries">
           <CountryBundles />
@@ -31,6 +30,7 @@ const Index = () => {
         <div id="contact">
           <ContactSection />
         </div>
+        <Features />
       </main>
       <Footer />
       <FloatingWhatsApp />
