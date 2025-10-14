@@ -5,6 +5,7 @@ import menaImage from "@/assets/mena-map.jpg";
 
 const CountryBundles = () => {
   const countries = [
+    // الشرق الأوسط وشمال أفريقيا
     "🇦🇪 الإمارات",
     "🇪🇬 مصر",
     "🇰🇼 الكويت",
@@ -16,7 +17,42 @@ const CountryBundles = () => {
     "🇮🇶 العراق",
     "🇲🇦 المغرب",
     "🇹🇳 تونس",
-    "🇩🇿 الجزائر"
+    "🇩🇿 الجزائر",
+    
+    // أمريكا
+    "🇺🇸 أمريكا",
+    "🇨🇦 كندا",
+    "🇲🇽 المكسيك",
+    "🇧🇷 البرازيل",
+    "🇦🇷 الأرجنتين",
+    
+    // أوروبا
+    "🇬🇧 بريطانيا",
+    "🇫🇷 فرنسا",
+    "🇩🇪 ألمانيا",
+    "🇮🇹 إيطاليا",
+    "🇪🇸 إسبانيا",
+    "🇳🇱 هولندا",
+    "🇧🇪 بلجيكا",
+    "🇨🇭 سويسرا",
+    "🇦🇹 النمسا",
+    "🇬🇷 اليونان",
+    "🇵🇹 البرتغال",
+    "🇸🇪 السويد",
+    "🇳🇴 النرويج",
+    "🇩🇰 الدنمارك",
+    "🇵🇱 بولندا",
+    "🇨🇿 التشيك",
+    
+    // آسيا
+    "🇹🇷 تركيا",
+    "🇨🇳 الصين",
+    "🇯🇵 اليابان",
+    "🇰🇷 كوريا",
+    "🇹🇭 تايلاند",
+    "🇸🇬 سنغافورة",
+    "🇲🇾 ماليزيا",
+    "🇮🇩 إندونيسيا"
   ];
 
   return (
@@ -28,7 +64,7 @@ const CountryBundles = () => {
             باقات <span className="gradient-gold bg-clip-text text-transparent">الدول العربية</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            نغطي جميع دول الشرق الأوسط وشمال أفريقيا
+            نغطي أكثر من 45 دولة حول العالم
           </p>
         </div>
 
@@ -47,14 +83,14 @@ const CountryBundles = () => {
               <CardContent className="space-y-6 p-0">
                 <div>
                   <h3 className="text-2xl font-bold mb-4">الدول المتاحة:</h3>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-h-[400px] overflow-y-auto pr-2">
                     {countries.map((country, index) => (
                       <div 
                         key={index}
-                        className="flex items-center gap-2 text-lg hover:text-accent transition-smooth"
+                        className="flex items-center gap-2 text-base hover:text-accent transition-smooth"
                       >
-                        <span className="text-2xl">{country.split(' ')[0]}</span>
-                        <span>{country.split(' ')[1]}</span>
+                        <span className="text-xl">{country.split(' ')[0]}</span>
+                        <span className="text-sm">{country.split(' ')[1]}</span>
                       </div>
                     ))}
                   </div>
