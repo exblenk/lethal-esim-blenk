@@ -11,7 +11,7 @@ const Features = () => {
     {
       icon: Shield,
       title: "آمن ومضمون",
-      description: "جميع المعاملات مشفرة وضمان استرجاع المال"
+      description: "جميع المعاملات مشفرة ومحمية بأعلى معايير الأمان"
     },
     {
       icon: Clock,
