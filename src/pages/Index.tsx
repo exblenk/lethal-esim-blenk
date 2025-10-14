@@ -17,16 +17,9 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <div className="relative py-12 overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-full max-w-4xl mx-auto px-4">
-              <div className="h-px gradient-gold opacity-30" />
-            </div>
-          </div>
-          <div className="relative flex justify-center">
-            <div className="bg-background px-6 py-2 rounded-full border border-accent/30 glow-gold">
-              <span className="gradient-gold bg-clip-text text-transparent font-bold text-lg">✦</span>
-            </div>
+        <div className="w-full py-8">
+          <div className="container mx-auto px-4">
+            <div className="h-px gradient-gold" />
           </div>
         </div>
         <Pricing />
