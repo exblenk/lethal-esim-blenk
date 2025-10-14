@@ -1,0 +1,122 @@
+import PricingCard from "./PricingCard";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import stcImage from "@/assets/stc-esim.jpg";
+import egyptImage from "@/assets/egypt-esim.jpg";
+
+const Pricing = () => {
+  const saudiPlans = [
+    {
+      duration: "يومين",
+      price: "٢٠",
+      features: ["إنترنت غير محدود", "مكالمات محلية", "تفعيل فوري", "دعم فني ٢٤/٧"]
+    },
+    {
+      duration: "٥ أيام",
+      price: "٤٥",
+      features: ["إنترنت غير محدود", "مكالمات محلية", "تفعيل فوري", "دعم فني ٢٤/٧", "خصم ٥٪"]
+    },
+    {
+      duration: "شهر واحد",
+      price: "١٩٠",
+      features: ["إنترنت غير محدود", "مكالمات محلية", "تفعيل فوري", "دعم فني ٢٤/٧", "خصم ١٠٪"],
+      popular: true
+    },
+    {
+      duration: "شهرين",
+      price: "٣٦٠",
+      features: ["إنترنت غير محدود", "مكالمات محلية", "تفعيل فوري", "دعم فني ٢٤/٧", "خصم ١٥٪"]
+    },
+    {
+      duration: "٣ أشهر",
+      price: "٥٥٩",
+      features: ["إنترنت غير محدود", "مكالمات محلية", "تفعيل فوري", "دعم فني ٢٤/٧", "خصم ٢٠٪"]
+    }
+  ];
+
+  const egyptPlans = [
+    {
+      duration: "يومين",
+      price: "١٤٠",
+      features: ["إنترنت غير محدود", "مكالمات محلية", "تفعيل فوري", "دعم فني ٢٤/٧"]
+    },
+    {
+      duration: "٥ أيام",
+      price: "٣١٥",
+      features: ["إنترنت غير محدود", "مكالمات محلية", "تفعيل فوري", "دعم فني ٢٤/٧", "خصم ٥٪"]
+    },
+    {
+      duration: "شهر واحد",
+      price: "١٣٣٠",
+      features: ["إنترنت غير محدود", "مكالمات محلية", "تفعيل فوري", "دعم فني ٢٤/٧", "خصم ١٠٪"],
+      popular: true
+    },
+    {
+      duration: "شهرين",
+      price: "٢٥٢٠",
+      features: ["إنترنت غير محدود", "مكالمات محلية", "تفعيل فوري", "دعم فني ٢٤/٧", "خصم ١٥٪"]
+    },
+    {
+      duration: "٣ أشهر",
+      price: "٣٩١٠",
+      features: ["إنترنت غير محدود", "مكالمات محلية", "تفعيل فوري", "دعم فني ٢٤/٧", "خصم ٢٠٪"]
+    }
+  ];
+
+  return (
+    <section id="pricing" className="py-20 px-4 bg-card/50">
+      <div className="container mx-auto">
+        <div className="text-center mb-12 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            باقاتنا <span className="gradient-gold bg-clip-text text-transparent">المميزة</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            اختر الباقة المناسبة لك - كلما زادت المدة، زاد الخصم
+          </p>
+        </div>
+
+        <Tabs defaultValue="saudi" className="w-full" dir="rtl">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
+            <TabsTrigger value="saudi" className="text-lg">السعودية 🇸🇦</TabsTrigger>
+            <TabsTrigger value="egypt" className="text-lg">مصر 🇪🇬</TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="saudi" className="animate-fade-in">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+              {saudiPlans.map((plan, index) => (
+                <PricingCard
+                  key={index}
+                  country="السعودية - STC"
+                  duration={plan.duration}
+                  price={plan.price}
+                  currency="ريال"
+                  features={plan.features}
+                  popular={plan.popular}
+                  image={stcImage}
+                />
+              ))}
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="egypt" className="animate-fade-in">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+              {egyptPlans.map((plan, index) => (
+                <PricingCard
+                  key={index}
+                  country="مصر - Orange"
+                  duration={plan.duration}
+                  price={plan.price}
+                  currency="جنيه"
+                  features={plan.features}
+                  popular={plan.popular}
+                  image={egyptImage}
+                />
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
+      </div>
+    </section>
+  );
+};
+
+export default Pricing;
