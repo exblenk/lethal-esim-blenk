@@ -95,7 +95,7 @@ const Pricing = () => {
           <TabsContent value="saudi" className="animate-fade-in">
             <Carousel 
               opts={{
-                align: "start",
+                align: "center",
                 loop: true,
                 direction: "rtl"
               }}
@@ -105,9 +105,9 @@ const Pricing = () => {
                 <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10" />
                 <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10" />
               </div>
-              <CarouselContent className="-ml-4">
+              <CarouselContent className="-ml-2 md:-ml-4">
                 {saudiPlans.map((plan, index) => (
-                  <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-[85%] sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
                     <PricingCard
                       country="السعودية - STC"
                       duration={plan.duration}
@@ -126,7 +126,7 @@ const Pricing = () => {
           <TabsContent value="egypt" className="animate-fade-in">
             <Carousel 
               opts={{
-                align: "start",
+                align: "center",
                 loop: true,
                 direction: "rtl"
               }}
@@ -136,9 +136,9 @@ const Pricing = () => {
                 <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10" />
                 <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10" />
               </div>
-              <CarouselContent className="-ml-4">
+              <CarouselContent className="-ml-2 md:-ml-4">
                 {egyptPlans.map((plan, index) => (
-                  <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-[85%] sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
                     <PricingCard
                       country="مصر - Orange"
                       duration={plan.duration}
