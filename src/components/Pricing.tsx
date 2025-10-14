@@ -92,35 +92,37 @@ const Pricing = () => {
           </TabsList>
           
           <TabsContent value="saudi" className="animate-fade-in">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            <div className="flex gap-6 overflow-x-auto pb-4 px-2 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-accent/50 scrollbar-track-transparent">
               {saudiPlans.map((plan, index) => (
-                <PricingCard
-                  key={index}
-                  country="السعودية - STC"
-                  duration={plan.duration}
-                  price={plan.price}
-                  currency="ريال"
-                  features={plan.features}
-                  popular={plan.popular}
-                  image={stcImage}
-                />
+                <div key={index} className="flex-shrink-0 w-[280px] snap-center">
+                  <PricingCard
+                    country="السعودية - STC"
+                    duration={plan.duration}
+                    price={plan.price}
+                    currency="ريال"
+                    features={plan.features}
+                    popular={plan.popular}
+                    image={stcImage}
+                  />
+                </div>
               ))}
             </div>
           </TabsContent>
           
           <TabsContent value="egypt" className="animate-fade-in">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            <div className="flex gap-6 overflow-x-auto pb-4 px-2 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-accent/50 scrollbar-track-transparent">
               {egyptPlans.map((plan, index) => (
-                <PricingCard
-                  key={index}
-                  country="مصر - Orange"
-                  duration={plan.duration}
-                  price={plan.price}
-                  currency="جنيه"
-                  features={plan.features}
-                  popular={plan.popular}
-                  image={egyptImage}
-                />
+                <div key={index} className="flex-shrink-0 w-[280px] snap-center">
+                  <PricingCard
+                    country="مصر - Orange"
+                    duration={plan.duration}
+                    price={plan.price}
+                    currency="جنيه"
+                    features={plan.features}
+                    popular={plan.popular}
+                    image={egyptImage}
+                  />
+                </div>
               ))}
             </div>
           </TabsContent>

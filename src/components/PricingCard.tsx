@@ -24,7 +24,7 @@ const PricingCard = ({ country, duration, price, currency, features, popular, im
       )}
       
       {image && (
-        <div className="h-48 overflow-hidden">
+        <div className="aspect-square overflow-hidden">
           <img 
             src={image} 
             alt={`${country} eSIM`}
