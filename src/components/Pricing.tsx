@@ -2,7 +2,7 @@ import PricingCard from "./PricingCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import stcImage from "@/assets/stc-esim-new.jpg";
-import egyptImage from "@/assets/egypt-esim.jpg";
+import egyptImage from "@/assets/orange-esim.jpg";
 import pricingBg from "@/assets/pricing-background.png";
 
 const Pricing = () => {
@@ -93,61 +93,69 @@ const Pricing = () => {
           </TabsList>
           
           <TabsContent value="saudi" className="animate-fade-in">
-            <Carousel 
-              opts={{
-                align: "start",
-                loop: true,
-                direction: "rtl"
-              }}
-              className="w-full max-w-full"
-            >
-              <CarouselContent className="-ml-4">
-                {saudiPlans.map((plan, index) => (
-                  <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
-                    <PricingCard
-                      country="السعودية - STC"
-                      duration={plan.duration}
-                      price={plan.price}
-                      currency="ريال"
-                      features={plan.features}
-                      popular={plan.popular}
-                      image={stcImage}
-                    />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="hidden sm:flex" />
-              <CarouselNext className="hidden sm:flex" />
-            </Carousel>
+            <div className="relative">
+              <div className="flex justify-center gap-4 mb-4">
+                <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10" />
+                <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10" />
+              </div>
+              <Carousel 
+                opts={{
+                  align: "start",
+                  loop: true,
+                  direction: "rtl"
+                }}
+                className="w-full max-w-full"
+              >
+                <CarouselContent className="-ml-4">
+                  {saudiPlans.map((plan, index) => (
+                    <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                      <PricingCard
+                        country="السعودية - STC"
+                        duration={plan.duration}
+                        price={plan.price}
+                        currency="ريال"
+                        features={plan.features}
+                        popular={plan.popular}
+                        image={stcImage}
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
+            </div>
           </TabsContent>
           
           <TabsContent value="egypt" className="animate-fade-in">
-            <Carousel 
-              opts={{
-                align: "start",
-                loop: true,
-                direction: "rtl"
-              }}
-              className="w-full max-w-full"
-            >
-              <CarouselContent className="-ml-4">
-                {egyptPlans.map((plan, index) => (
-                  <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
-                    <PricingCard
-                      country="مصر - Orange"
-                      duration={plan.duration}
-                      price={plan.price}
-                      currency="جنيه"
-                      features={plan.features}
-                      popular={plan.popular}
-                      image={egyptImage}
-                    />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="hidden sm:flex" />
-              <CarouselNext className="hidden sm:flex" />
-            </Carousel>
+            <div className="relative">
+              <div className="flex justify-center gap-4 mb-4">
+                <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10" />
+                <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10" />
+              </div>
+              <Carousel 
+                opts={{
+                  align: "start",
+                  loop: true,
+                  direction: "rtl"
+                }}
+                className="w-full max-w-full"
+              >
+                <CarouselContent className="-ml-4">
+                  {egyptPlans.map((plan, index) => (
+                    <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                      <PricingCard
+                        country="مصر - Orange"
+                        duration={plan.duration}
+                        price={plan.price}
+                        currency="جنيه"
+                        features={plan.features}
+                        popular={plan.popular}
+                        image={egyptImage}
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
+            </div>
           </TabsContent>
         </Tabs>
       </div>
