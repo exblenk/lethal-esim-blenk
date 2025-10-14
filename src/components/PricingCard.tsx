@@ -35,22 +35,20 @@ const PricingCard = ({ country, duration, price, currency, features, popular, im
       )}
       
       <CardHeader>
-        <CardTitle className="text-2xl">{country}</CardTitle>
-        <CardDescription className="text-lg">{duration}</CardDescription>
+        <div className="flex items-center justify-between gap-2">
+          <CardTitle className="text-xl">{country}</CardTitle>
+          <div className="text-2xl font-bold gradient-gold bg-clip-text text-transparent whitespace-nowrap">
+            {price} {currency}
+          </div>
+        </div>
+        <CardDescription className="text-base">{duration}</CardDescription>
       </CardHeader>
       
       <CardContent className="space-y-4">
-        <div className="text-center py-4">
-          <div className="text-5xl font-bold gradient-gold bg-clip-text text-transparent">
-            {price}
-          </div>
-          <div className="text-xl text-muted-foreground mt-2">{currency}</div>
-        </div>
-        
-        <ul className="space-y-3">
+        <ul className="space-y-2">
           {features.map((feature, index) => (
             <li key={index} className="flex items-start gap-2">
-              <Check className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+              <Check className="w-3.5 h-3.5 text-accent mt-0.5 flex-shrink-0" />
               <span className="text-sm">{feature}</span>
             </li>
           ))}
