@@ -1,5 +1,6 @@
 import PricingCard from "./PricingCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import stcImage from "@/assets/stc-esim-new.jpg";
 import egyptImage from "@/assets/egypt-esim.jpg";
 import pricingBg from "@/assets/pricing-background.png";
@@ -92,39 +93,61 @@ const Pricing = () => {
           </TabsList>
           
           <TabsContent value="saudi" className="animate-fade-in">
-            <div className="flex gap-6 overflow-x-auto pb-4 px-2 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-accent/50 scrollbar-track-transparent">
-              {saudiPlans.map((plan, index) => (
-                <div key={index} className="flex-shrink-0 w-[280px] snap-center">
-                  <PricingCard
-                    country="السعودية - STC"
-                    duration={plan.duration}
-                    price={plan.price}
-                    currency="ريال"
-                    features={plan.features}
-                    popular={plan.popular}
-                    image={stcImage}
-                  />
-                </div>
-              ))}
-            </div>
+            <Carousel 
+              opts={{
+                align: "start",
+                loop: true,
+                direction: "rtl"
+              }}
+              className="w-full max-w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {saudiPlans.map((plan, index) => (
+                  <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
+                    <PricingCard
+                      country="السعودية - STC"
+                      duration={plan.duration}
+                      price={plan.price}
+                      currency="ريال"
+                      features={plan.features}
+                      popular={plan.popular}
+                      image={stcImage}
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden sm:flex" />
+              <CarouselNext className="hidden sm:flex" />
+            </Carousel>
           </TabsContent>
           
           <TabsContent value="egypt" className="animate-fade-in">
-            <div className="flex gap-6 overflow-x-auto pb-4 px-2 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-accent/50 scrollbar-track-transparent">
-              {egyptPlans.map((plan, index) => (
-                <div key={index} className="flex-shrink-0 w-[280px] snap-center">
-                  <PricingCard
-                    country="مصر - Orange"
-                    duration={plan.duration}
-                    price={plan.price}
-                    currency="جنيه"
-                    features={plan.features}
-                    popular={plan.popular}
-                    image={egyptImage}
-                  />
-                </div>
-              ))}
-            </div>
+            <Carousel 
+              opts={{
+                align: "start",
+                loop: true,
+                direction: "rtl"
+              }}
+              className="w-full max-w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {egyptPlans.map((plan, index) => (
+                  <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
+                    <PricingCard
+                      country="مصر - Orange"
+                      duration={plan.duration}
+                      price={plan.price}
+                      currency="جنيه"
+                      features={plan.features}
+                      popular={plan.popular}
+                      image={egyptImage}
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden sm:flex" />
+              <CarouselNext className="hidden sm:flex" />
+            </Carousel>
           </TabsContent>
         </Tabs>
       </div>
