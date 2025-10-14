@@ -2,6 +2,7 @@ import PricingCard from "./PricingCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import stcImage from "@/assets/stc-esim.jpg";
 import egyptImage from "@/assets/egypt-esim.jpg";
+import pricingBg from "@/assets/pricing-background.png";
 
 const Pricing = () => {
   const saudiPlans = [
@@ -63,8 +64,18 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="pricing" className="py-20 px-4 bg-card/50">
-      <div className="container mx-auto">
+    <section id="pricing" className="relative py-20 px-4 overflow-hidden">
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${pricingBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'brightness(0.3)'
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background z-0" />
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             باقاتنا <span className="gradient-gold bg-clip-text text-transparent">المميزة</span>
