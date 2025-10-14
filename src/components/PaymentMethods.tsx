@@ -1,26 +1,28 @@
-import { Card } from "@/components/ui/card";
-import { CreditCard, Smartphone, Wallet } from "lucide-react";
+import paypalLogo from "@/assets/paypal-logo.png";
+import stcPayLogo from "@/assets/stc-pay-logo.png";
+import vodafoneLogo from "@/assets/vodafone-logo.png";
+import madaLogo from "@/assets/mada-logo.png";
 
 const PaymentMethods = () => {
   const methods = [
     {
       name: "PayPal",
-      icon: CreditCard,
+      logo: paypalLogo,
       description: "دفع آمن عبر PayPal"
     },
     {
       name: "STC Pay",
-      icon: Smartphone,
+      logo: stcPayLogo,
       description: "الدفع السريع عبر STC Pay"
     },
     {
       name: "Vodafone Cash",
-      icon: Wallet,
+      logo: vodafoneLogo,
       description: "فودافون كاش (مصر فقط)"
     },
     {
       name: "MADA",
-      icon: CreditCard,
+      logo: madaLogo,
       description: "بطاقات مدى السعودية"
     }
   ];
@@ -37,26 +39,26 @@ const PaymentMethods = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {methods.map((method, index) => {
-            const Icon = method.icon;
-            return (
-              <Card 
-                key={index}
-                className="p-6 text-center hover:scale-105 transition-smooth hover:glow-primary animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <Icon className="w-16 h-16 mx-auto mb-4 text-accent" />
-                <h3 className="text-xl font-bold mb-2">{method.name}</h3>
-                <p className="text-sm text-muted-foreground">{method.description}</p>
-              </Card>
-            );
-          })}
+        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 max-w-4xl mx-auto">
+          {methods.map((method, index) => (
+            <div 
+              key={index}
+              className="flex flex-col items-center gap-2 hover:scale-105 transition-smooth animate-scale-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <img 
+                src={method.logo} 
+                alt={method.name}
+                className="w-16 h-16 md:w-20 md:h-20 object-contain hover:glow-primary rounded-lg"
+              />
+              <p className="text-xs text-muted-foreground text-center max-w-[100px]">{method.description}</p>
+            </div>
+          ))}
         </div>
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground">
-            🔒 جميع المعاملات مشفرة ومؤمنة بالكامل
+            🔒 جميع المعاملات آمنة
           </p>
         </div>
       </div>
