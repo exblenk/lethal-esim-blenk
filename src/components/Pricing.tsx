@@ -100,7 +100,7 @@ const Pricing = () => {
             <TabsTrigger value="egypt" className="text-lg">مصر 🇪🇬</TabsTrigger>
           </TabsList>
           
-          <TabsContent value="saudi" className="data-[state=active]:animate-fade-in">
+          <TabsContent value="saudi" className="animate-fade-in">
             <Carousel 
               opts={{
                 align: "center",
@@ -132,7 +132,7 @@ const Pricing = () => {
             </Carousel>
           </TabsContent>
           
-          <TabsContent value="egypt" className="data-[state=active]:animate-fade-in">
+          <TabsContent value="egypt" className="animate-fade-in">
             <Carousel 
               opts={{
                 align: "center",
