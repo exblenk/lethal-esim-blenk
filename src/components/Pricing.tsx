@@ -15,22 +15,26 @@ const Pricing = () => {
     {
       duration: "٥ أيام",
       price: "٤٥",
+      oldPrice: "٤٧",
       features: ["إنترنت غير محدود", "تفعيل فوري", "دعم فني ٢٤/٧", "خصم ٥٪"]
     },
     {
       duration: "شهر واحد",
       price: "١٩٠",
+      oldPrice: "٢١١",
       features: ["إنترنت غير محدود", "تفعيل فوري", "دعم فني ٢٤/٧", "خصم ١٠٪"],
       popular: true
     },
     {
       duration: "شهرين",
       price: "٣٦٠",
+      oldPrice: "٤٢٤",
       features: ["إنترنت غير محدود", "تفعيل فوري", "دعم فني ٢٤/٧", "خصم ١٥٪"]
     },
     {
       duration: "٣ أشهر",
       price: "٥٥٩",
+      oldPrice: "٦٩٩",
       features: ["إنترنت غير محدود", "تفعيل فوري", "دعم فني ٢٤/٧", "خصم ٢٠٪"]
     }
   ];
@@ -44,22 +48,26 @@ const Pricing = () => {
     {
       duration: "٥ أيام",
       price: "٣١٥",
+      oldPrice: "٣٣٢",
       features: ["إنترنت غير محدود", "تفعيل فوري", "دعم فني ٢٤/٧", "خصم ٥٪"]
     },
     {
       duration: "شهر واحد",
       price: "١٣٣٠",
+      oldPrice: "١٤٧٨",
       features: ["إنترنت غير محدود", "تفعيل فوري", "دعم فني ٢٤/٧", "خصم ١٠٪"],
       popular: true
     },
     {
       duration: "شهرين",
       price: "٢٥٢٠",
+      oldPrice: "٢٩٦٥",
       features: ["إنترنت غير محدود", "تفعيل فوري", "دعم فني ٢٤/٧", "خصم ١٥٪"]
     },
     {
       duration: "٣ أشهر",
       price: "٣٩١٠",
+      oldPrice: "٤٨٨٨",
       features: ["إنترنت غير محدود", "تفعيل فوري", "دعم فني ٢٤/٧", "خصم ٢٠٪"]
     }
   ];
@@ -112,6 +120,7 @@ const Pricing = () => {
                       country="السعودية - STC"
                       duration={plan.duration}
                       price={plan.price}
+                      oldPrice={plan.oldPrice}
                       currency="ريال"
                       features={plan.features}
                       popular={plan.popular}
@@ -143,6 +152,7 @@ const Pricing = () => {
                       country="مصر - Orange"
                       duration={plan.duration}
                       price={plan.price}
+                      oldPrice={plan.oldPrice}
                       currency="جنيه"
                       features={plan.features}
                       popular={plan.popular}

@@ -6,13 +6,14 @@ interface PricingCardProps {
   country: string;
   duration: string;
   price: string;
+  oldPrice?: string;
   currency: string;
   features: string[];
   popular?: boolean;
   image?: string;
 }
 
-const PricingCard = ({ country, duration, price, currency, features, popular, image }: PricingCardProps) => {
+const PricingCard = ({ country, duration, price, oldPrice, currency, features, popular, image }: PricingCardProps) => {
   const whatsappMessage = encodeURIComponent(`أريد شراء باقة ${country} - ${duration} بسعر ${price} ${currency}`);
   
   return (
@@ -37,8 +38,15 @@ const PricingCard = ({ country, duration, price, currency, features, popular, im
       <CardHeader>
         <div className="flex items-center justify-between gap-2">
           <CardTitle className="text-xl">{country}</CardTitle>
-          <div className="text-2xl font-bold gradient-gold bg-clip-text text-transparent whitespace-nowrap">
-            {price} {currency}
+          <div className="flex flex-col items-end">
+            {oldPrice && (
+              <div className="text-sm text-muted-foreground line-through">
+                {oldPrice} {currency}
+              </div>
+            )}
+            <div className="text-2xl font-bold gradient-gold bg-clip-text text-transparent whitespace-nowrap">
+              {price} {currency}
+            </div>
           </div>
         </div>
         <CardDescription className="text-base">{duration}</CardDescription>
