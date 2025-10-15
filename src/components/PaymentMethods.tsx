@@ -39,19 +39,21 @@ const PaymentMethods = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
           {methods.map((method, index) => (
             <div 
               key={index}
-              className="flex flex-col items-center gap-2 hover:scale-105 transition-smooth animate-scale-in"
+              className="flex flex-col items-center gap-3 p-4 rounded-xl bg-card border hover:border-primary/50 hover:shadow-lg transition-smooth animate-scale-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <img 
-                src={method.logo} 
-                alt={method.name}
-                className="w-16 h-16 md:w-20 md:h-20 object-contain hover:glow-primary rounded-lg"
-              />
-              <p className="text-xs text-muted-foreground text-center max-w-[100px]">{method.description}</p>
+              <div className="w-20 h-20 flex items-center justify-center">
+                <img 
+                  src={method.logo} 
+                  alt={method.name}
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
+              <p className="text-xs text-muted-foreground text-center">{method.description}</p>
             </div>
           ))}
         </div>
