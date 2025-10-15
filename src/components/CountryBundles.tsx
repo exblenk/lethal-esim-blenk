@@ -69,7 +69,7 @@ const CountryBundles = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-          <Card className="overflow-hidden animate-scale-in">
+          <Card className="overflow-hidden animate-scale-in hidden md:block">
             <img 
               src={menaImage} 
               alt="MENA Countries Map"
@@ -78,7 +78,7 @@ const CountryBundles = () => {
             />
           </Card>
 
-          <div className="space-y-6 animate-fade-in">
+          <div className="space-y-6 animate-fade-in md:col-span-1 col-span-2">
             <Card className="gradient-primary p-6">
               <CardContent className="space-y-6 p-0">
                 <div>
