@@ -39,11 +39,11 @@ const PaymentMethods = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center items-start gap-6 md:gap-8 max-w-4xl mx-auto">
+        <div className="flex justify-center items-start gap-4 md:gap-8 max-w-5xl mx-auto overflow-x-auto pb-2">
           {methods.map((method, index) => (
             <div 
               key={index}
-              className="flex flex-col items-center gap-2 animate-scale-in"
+              className="flex flex-col items-center gap-2 animate-scale-in min-w-[80px] md:min-w-[100px]"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-background rounded-lg border p-2 hover:border-primary/50 transition-smooth">
