@@ -137,11 +137,11 @@ const Pricing = () => {
               }}
               className="w-full"
             >
-              <CarouselContent className="-ml-2 md:-ml-4" style={{ touchAction: 'pan-y pinch-zoom' }}>
+              <CarouselContent className="-ml-2 md:-ml-3 lg:-ml-4" style={{ touchAction: 'pan-y pinch-zoom' }}>
                 {saudiPlans.map((plan, index) => (
                   <CarouselItem 
                     key={index} 
-                    className="pl-2 md:pl-4 basis-[90%] md:basis-[75%] lg:basis-[65%] xl:basis-[55%]"
+                    className="pl-2 md:pl-3 lg:pl-4 basis-[82%] sm:basis-[75%] md:basis-[60%] lg:basis-[45%] xl:basis-[38%]"
                   >
                     <div className={`transition-all duration-300 ${saudiCurrent === index ? 'scale-105' : 'scale-95 opacity-80'}`}>
                       <PricingCard
@@ -178,11 +178,11 @@ const Pricing = () => {
               }}
               className="w-full"
             >
-              <CarouselContent className="-ml-2 md:-ml-4" style={{ touchAction: 'pan-y pinch-zoom' }}>
+              <CarouselContent className="-ml-2 md:-ml-3 lg:-ml-4" style={{ touchAction: 'pan-y pinch-zoom' }}>
                 {egyptPlans.map((plan, index) => (
                   <CarouselItem 
                     key={index} 
-                    className="pl-2 md:pl-4 basis-[90%] md:basis-[75%] lg:basis-[65%] xl:basis-[55%]"
+                    className="pl-2 md:pl-3 lg:pl-4 basis-[82%] sm:basis-[75%] md:basis-[60%] lg:basis-[45%] xl:basis-[38%]"
                   >
                     <div className={`transition-all duration-300 ${egyptCurrent === index ? 'scale-105' : 'scale-95 opacity-80'}`}>
                       <PricingCard
