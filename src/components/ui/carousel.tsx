@@ -136,19 +136,10 @@ const CarouselContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HT
     const { carouselRef, orientation } = useCarousel();
 
     return (
-      <div 
-        ref={carouselRef} 
-        className="overflow-hidden cursor-grab active:cursor-grabbing"
-        style={{ 
-          WebkitTapHighlightColor: 'transparent',
-        }}
-      >
+      <div ref={carouselRef} className="overflow-hidden">
         <div
           ref={ref}
           className={cn("flex", orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col", className)}
-          style={{
-            WebkitTapHighlightColor: 'transparent',
-          }}
           {...props}
         />
       </div>
@@ -184,7 +175,7 @@ const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProp
         variant={variant}
         size={size}
         className={cn(
-          "absolute h-8 w-8 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
+          "absolute h-8 w-8 rounded-full",
           orientation === "horizontal"
             ? "-left-12 top-1/2 -translate-y-1/2"
             : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -192,9 +183,6 @@ const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProp
         )}
         disabled={!canScrollPrev}
         onClick={scrollPrev}
-        style={{ 
-          WebkitTapHighlightColor: 'transparent',
-        }}
         {...props}
       >
         <ArrowLeft className="h-4 w-4" />
@@ -215,7 +203,7 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
         variant={variant}
         size={size}
         className={cn(
-          "absolute h-8 w-8 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
+          "absolute h-8 w-8 rounded-full",
           orientation === "horizontal"
             ? "-right-12 top-1/2 -translate-y-1/2"
             : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -223,9 +211,6 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
         )}
         disabled={!canScrollNext}
         onClick={scrollNext}
-        style={{ 
-          WebkitTapHighlightColor: 'transparent',
-        }}
         {...props}
       >
         <ArrowRight className="h-4 w-4" />
