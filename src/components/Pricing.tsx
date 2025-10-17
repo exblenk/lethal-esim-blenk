@@ -95,9 +95,9 @@ const Pricing = () => {
         </div>
 
         <Tabs defaultValue="saudi" className="w-full" dir="rtl">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
-            <TabsTrigger value="saudi" className="text-lg">السعودية 🇸🇦</TabsTrigger>
-            <TabsTrigger value="egypt" className="text-lg">مصر 🇪🇬</TabsTrigger>
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12 p-1.5 h-auto">
+            <TabsTrigger value="saudi" className="text-base md:text-lg h-12">السعودية 🇸🇦</TabsTrigger>
+            <TabsTrigger value="egypt" className="text-base md:text-lg h-12">مصر 🇪🇬</TabsTrigger>
           </TabsList>
           
           <TabsContent value="saudi" className="data-[state=active]:animate-fade-in">
@@ -109,13 +109,13 @@ const Pricing = () => {
               }}
               className="w-full max-w-full"
             >
-              <div className="flex justify-center gap-4 mb-6">
-                <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10" />
-                <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10" />
+              <div className="flex justify-center gap-6 mb-8">
+                <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground border-2 border-primary transition-all duration-300 hover:scale-110" />
+                <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground border-2 border-primary transition-all duration-300 hover:scale-110" />
               </div>
-              <CarouselContent className="-ml-2 md:-ml-4">
+              <CarouselContent className="-ml-2 md:-ml-4 pb-4">
                 {saudiPlans.map((plan, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-[85%] sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-[90%] sm:basis-[80%] md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                     <PricingCard
                       country="السعودية - STC"
                       duration={plan.duration}
@@ -141,13 +141,13 @@ const Pricing = () => {
               }}
               className="w-full max-w-full"
             >
-              <div className="flex justify-center gap-4 mb-6">
-                <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10" />
-                <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10" />
+              <div className="flex justify-center gap-6 mb-8">
+                <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground border-2 border-primary transition-all duration-300 hover:scale-110" />
+                <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground border-2 border-primary transition-all duration-300 hover:scale-110" />
               </div>
-              <CarouselContent className="-ml-2 md:-ml-4">
+              <CarouselContent className="-ml-2 md:-ml-4 pb-4">
                 {egyptPlans.map((plan, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-[85%] sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-[90%] sm:basis-[80%] md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                     <PricingCard
                       country="مصر - Orange"
                       duration={plan.duration}

@@ -39,21 +39,21 @@ const PaymentMethods = () => {
           </p>
         </div>
 
-        <div className="flex justify-center items-start gap-4 md:gap-8 max-w-5xl mx-auto overflow-x-auto pb-2">
+        <div className="flex justify-center items-start gap-6 md:gap-12 max-w-5xl mx-auto overflow-x-auto pb-2">
           {methods.map((method, index) => (
             <div 
               key={index}
-              className="flex flex-col items-center gap-2 animate-scale-in min-w-[80px] md:min-w-[100px]"
+              className="flex flex-col items-center gap-3 animate-scale-in min-w-[100px] md:min-w-[120px]"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-background rounded-lg border p-2 hover:border-primary/50 transition-smooth">
+              <div className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-background rounded-xl shadow-lg border-2 border-border p-3 hover:border-primary/50 hover:shadow-xl hover:scale-105 transition-all duration-300">
                 <img 
                   src={method.logo} 
-                  alt={method.name}
-                  className="max-w-full max-h-full object-contain"
+                  alt={`${method.name} - ${method.description}`}
+                  className="w-full h-full object-contain"
                 />
               </div>
-              <p className="text-xs text-muted-foreground text-center max-w-[100px]">{method.description}</p>
+              <p className="text-xs md:text-sm text-muted-foreground text-center max-w-[120px] font-medium">{method.description}</p>
             </div>
           ))}
         </div>
