@@ -11,13 +11,22 @@ interface PricingCardProps {
   features: string[];
   popular?: boolean;
   image?: string;
+  isActive?: boolean;
 }
 
-const PricingCard = ({ country, duration, price, oldPrice, currency, features, popular, image }: PricingCardProps) => {
+const PricingCard = ({ country, duration, price, oldPrice, currency, features, popular, image, isActive }: PricingCardProps) => {
   const whatsappMessage = encodeURIComponent(`أريد شراء باقة ${country} - ${duration} بسعر ${price} ${currency}`);
   
   return (
-    <Card className={`relative overflow-hidden h-full transition-smooth hover:scale-[1.02] ${popular ? 'border-accent border-2 glow-gold' : ''}`}>
+    <Card 
+      className={`relative overflow-hidden h-full transition-all duration-300 ${
+        isActive ? 'shadow-elegant scale-100' : 'shadow-md'
+      } ${popular ? 'border-accent border-2 glow-gold' : ''}`}
+      style={{ 
+        WebkitTapHighlightColor: 'transparent',
+        outline: 'none'
+      }}
+    >
       {popular && (
         <div className="absolute top-3 left-3 bg-accent text-accent-foreground px-2.5 py-1 rounded-full text-xs font-bold z-10">
           الأكثر طلباً

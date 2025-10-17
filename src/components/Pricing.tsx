@@ -1,11 +1,36 @@
 import PricingCard from "./PricingCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselApi } from "@/components/ui/carousel";
 import stcImage from "@/assets/stc-esim-new.jpg";
 import egyptImage from "@/assets/orange-esim.jpg";
 import pricingBg from "@/assets/pricing-background.png";
+import { useEffect, useState } from "react";
 
 const Pricing = () => {
+  const [saudiApi, setSaudiApi] = useState<CarouselApi>();
+  const [egyptApi, setEgyptApi] = useState<CarouselApi>();
+  const [saudiCurrent, setSaudiCurrent] = useState(0);
+  const [egyptCurrent, setEgyptCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!saudiApi) return;
+    
+    setSaudiCurrent(saudiApi.selectedScrollSnap());
+    
+    saudiApi.on("select", () => {
+      setSaudiCurrent(saudiApi.selectedScrollSnap());
+    });
+  }, [saudiApi]);
+
+  useEffect(() => {
+    if (!egyptApi) return;
+    
+    setEgyptCurrent(egyptApi.selectedScrollSnap());
+    
+    egyptApi.on("select", () => {
+      setEgyptCurrent(egyptApi.selectedScrollSnap());
+    });
+  }, [egyptApi]);
   const saudiPlans = [
     {
       duration: "يومين",
@@ -102,64 +127,82 @@ const Pricing = () => {
           
           <TabsContent value="saudi" className="data-[state=active]:animate-fade-in">
             <Carousel 
+              setApi={setSaudiApi}
               opts={{
-                align: "start",
+                align: "center",
                 loop: false,
-                direction: "rtl"
+                direction: "rtl",
+                containScroll: "trimSnaps",
+                skipSnaps: false
               }}
-              className="w-full px-4 md:px-8"
+              className="w-full"
             >
-              <CarouselContent className="mx-0 gap-4 pb-4">
+              <CarouselContent className="-ml-2 md:-ml-4" style={{ touchAction: 'pan-y pinch-zoom' }}>
                 {saudiPlans.map((plan, index) => (
-                  <CarouselItem key={index} className="pl-0 basis-[85%] sm:basis-[70%] md:basis-1/2 lg:basis-1/3">
-                    <PricingCard
-                      country="السعودية - STC"
-                      duration={plan.duration}
-                      price={plan.price}
-                      oldPrice={plan.oldPrice}
-                      currency="ريال"
-                      features={plan.features}
-                      popular={plan.popular}
-                      image={stcImage}
-                    />
+                  <CarouselItem 
+                    key={index} 
+                    className="pl-2 md:pl-4 basis-[85%] md:basis-[70%] lg:basis-[60%] xl:basis-[50%]"
+                  >
+                    <div className={`transition-all duration-300 ${saudiCurrent === index ? 'scale-105' : 'scale-95 opacity-80'}`}>
+                      <PricingCard
+                        country="السعودية - STC"
+                        duration={plan.duration}
+                        price={plan.price}
+                        oldPrice={plan.oldPrice}
+                        currency="ريال"
+                        features={plan.features}
+                        popular={plan.popular}
+                        image={stcImage}
+                        isActive={saudiCurrent === index}
+                      />
+                    </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <div className="flex justify-center gap-4 mt-6">
-                <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110" />
-                <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110" />
+              <div className="flex justify-center gap-4 mt-8">
+                <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110 shadow-elegant" />
+                <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110 shadow-elegant" />
               </div>
             </Carousel>
           </TabsContent>
           
           <TabsContent value="egypt" className="data-[state=active]:animate-fade-in">
             <Carousel 
+              setApi={setEgyptApi}
               opts={{
-                align: "start",
+                align: "center",
                 loop: false,
-                direction: "rtl"
+                direction: "rtl",
+                containScroll: "trimSnaps",
+                skipSnaps: false
               }}
-              className="w-full px-4 md:px-8"
+              className="w-full"
             >
-              <CarouselContent className="mx-0 gap-4 pb-4">
+              <CarouselContent className="-ml-2 md:-ml-4" style={{ touchAction: 'pan-y pinch-zoom' }}>
                 {egyptPlans.map((plan, index) => (
-                  <CarouselItem key={index} className="pl-0 basis-[85%] sm:basis-[70%] md:basis-1/2 lg:basis-1/3">
-                    <PricingCard
-                      country="مصر - Orange"
-                      duration={plan.duration}
-                      price={plan.price}
-                      oldPrice={plan.oldPrice}
-                      currency="جنيه"
-                      features={plan.features}
-                      popular={plan.popular}
-                      image={egyptImage}
-                    />
+                  <CarouselItem 
+                    key={index} 
+                    className="pl-2 md:pl-4 basis-[85%] md:basis-[70%] lg:basis-[60%] xl:basis-[50%]"
+                  >
+                    <div className={`transition-all duration-300 ${egyptCurrent === index ? 'scale-105' : 'scale-95 opacity-80'}`}>
+                      <PricingCard
+                        country="مصر - Orange"
+                        duration={plan.duration}
+                        price={plan.price}
+                        oldPrice={plan.oldPrice}
+                        currency="جنيه"
+                        features={plan.features}
+                        popular={plan.popular}
+                        image={egyptImage}
+                        isActive={egyptCurrent === index}
+                      />
+                    </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <div className="flex justify-center gap-4 mt-6">
-                <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110" />
-                <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110" />
+              <div className="flex justify-center gap-4 mt-8">
+                <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110 shadow-elegant" />
+                <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110 shadow-elegant" />
               </div>
             </Carousel>
           </TabsContent>
