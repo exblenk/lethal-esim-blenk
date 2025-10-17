@@ -1,7 +1,7 @@
 import paypalLogo from "@/assets/paypal-logo.png";
 import stcPayLogo from "@/assets/stc-pay-logo.png";
 import vodafoneLogo from "@/assets/vodafone-logo.png";
-import madaLogo from "@/assets/mada-logo.png";
+import barqLogo from "@/assets/anb-barq-logo.png";
 
 const PaymentMethods = () => {
   const methods = [
@@ -21,9 +21,9 @@ const PaymentMethods = () => {
       description: "فودافون كاش (مصر فقط)"
     },
     {
-      name: "MADA",
-      logo: madaLogo,
-      description: "بطاقات مدى السعودية"
+      name: "Barq",
+      logo: barqLogo,
+      description: "برق البنك العربي الوطني"
     }
   ];
 
