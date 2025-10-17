@@ -103,19 +103,15 @@ const Pricing = () => {
           <TabsContent value="saudi" className="data-[state=active]:animate-fade-in">
             <Carousel 
               opts={{
-                align: "center",
-                loop: true,
+                align: "start",
+                loop: false,
                 direction: "rtl"
               }}
-              className="w-full max-w-full"
+              className="w-full px-4 md:px-8"
             >
-              <div className="flex justify-center gap-6 mb-8">
-                <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground border-2 border-primary transition-all duration-300 hover:scale-110" />
-                <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground border-2 border-primary transition-all duration-300 hover:scale-110" />
-              </div>
-              <CarouselContent className="-ml-2 md:-ml-4 pb-4">
+              <CarouselContent className="mx-0 gap-4 pb-4">
                 {saudiPlans.map((plan, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-[90%] sm:basis-[80%] md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                  <CarouselItem key={index} className="pl-0 basis-[85%] sm:basis-[70%] md:basis-1/2 lg:basis-1/3">
                     <PricingCard
                       country="السعودية - STC"
                       duration={plan.duration}
@@ -129,25 +125,25 @@ const Pricing = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
+              <div className="flex justify-center gap-4 mt-6">
+                <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110" />
+                <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110" />
+              </div>
             </Carousel>
           </TabsContent>
           
           <TabsContent value="egypt" className="data-[state=active]:animate-fade-in">
             <Carousel 
               opts={{
-                align: "center",
-                loop: true,
+                align: "start",
+                loop: false,
                 direction: "rtl"
               }}
-              className="w-full max-w-full"
+              className="w-full px-4 md:px-8"
             >
-              <div className="flex justify-center gap-6 mb-8">
-                <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground border-2 border-primary transition-all duration-300 hover:scale-110" />
-                <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground border-2 border-primary transition-all duration-300 hover:scale-110" />
-              </div>
-              <CarouselContent className="-ml-2 md:-ml-4 pb-4">
+              <CarouselContent className="mx-0 gap-4 pb-4">
                 {egyptPlans.map((plan, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-[90%] sm:basis-[80%] md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                  <CarouselItem key={index} className="pl-0 basis-[85%] sm:basis-[70%] md:basis-1/2 lg:basis-1/3">
                     <PricingCard
                       country="مصر - Orange"
                       duration={plan.duration}
@@ -161,6 +157,10 @@ const Pricing = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
+              <div className="flex justify-center gap-4 mt-6">
+                <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110" />
+                <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-10 w-10 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110" />
+              </div>
             </Carousel>
           </TabsContent>
         </Tabs>

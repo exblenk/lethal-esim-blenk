@@ -17,9 +17,9 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
   const whatsappMessage = encodeURIComponent(`أريد شراء باقة ${country} - ${duration} بسعر ${price} ${currency}`);
   
   return (
-    <Card className={`relative overflow-hidden transition-smooth hover:scale-105 ${popular ? 'border-accent border-2 glow-gold' : ''}`}>
+    <Card className={`relative overflow-hidden h-full transition-smooth hover:scale-[1.02] ${popular ? 'border-accent border-2 glow-gold' : ''}`}>
       {popular && (
-        <div className="absolute top-4 left-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-bold">
+        <div className="absolute top-3 left-3 bg-accent text-accent-foreground px-2.5 py-1 rounded-full text-xs font-bold z-10">
           الأكثر طلباً
         </div>
       )}
@@ -35,36 +35,36 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
         </div>
       )}
       
-      <CardHeader>
+      <CardHeader className="pb-3">
         <div className="flex items-center justify-between gap-2">
-          <CardTitle className="text-xl">{country}</CardTitle>
+          <CardTitle className="text-lg md:text-xl">{country}</CardTitle>
           <div className="flex flex-col items-end">
             {oldPrice && (
-              <div className="text-sm text-muted-foreground line-through">
+              <div className="text-xs md:text-sm text-muted-foreground line-through">
                 {oldPrice} {currency}
               </div>
             )}
-            <div className="text-2xl font-bold gradient-gold bg-clip-text text-transparent whitespace-nowrap">
+            <div className="text-xl md:text-2xl font-bold gradient-gold bg-clip-text text-transparent whitespace-nowrap">
               {price} {currency}
             </div>
           </div>
         </div>
-        <CardDescription className="text-base">{duration}</CardDescription>
+        <CardDescription className="text-sm md:text-base">{duration}</CardDescription>
       </CardHeader>
       
-      <CardContent className="space-y-4">
-        <ul className="space-y-2">
+      <CardContent className="space-y-3 pt-0">
+        <ul className="space-y-1.5">
           {features.map((feature, index) => (
             <li key={index} className="flex items-start gap-2">
-              <Check className="w-3.5 h-3.5 text-accent mt-0.5 flex-shrink-0" />
-              <span className="text-sm">{feature}</span>
+              <Check className="w-3 h-3 md:w-3.5 md:h-3.5 text-accent mt-0.5 flex-shrink-0" />
+              <span className="text-xs md:text-sm">{feature}</span>
             </li>
           ))}
         </ul>
         
         <Button 
           variant="whatsapp" 
-          className="w-full"
+          className="w-full text-sm md:text-base"
           asChild
         >
           <a href={`https://wa.me/201060103226?text=${whatsappMessage}`}>
