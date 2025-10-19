@@ -69,15 +69,16 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
 
     const handleKeyDown = React.useCallback(
       (event: React.KeyboardEvent<HTMLDivElement>) => {
+        const isRtl = opts?.direction === "rtl";
         if (event.key === "ArrowLeft") {
           event.preventDefault();
-          scrollPrev();
+          isRtl ? scrollNext() : scrollPrev();
         } else if (event.key === "ArrowRight") {
           event.preventDefault();
-          scrollNext();
+          isRtl ? scrollPrev() : scrollNext();
         }
       },
-      [scrollPrev, scrollNext],
+      [scrollPrev, scrollNext, opts?.direction],
     );
 
     React.useEffect(() => {
@@ -138,14 +139,14 @@ const CarouselContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HT
     return (
       <div 
         ref={carouselRef} 
-        className="overflow-hidden cursor-grab active:cursor-grabbing"
+        className="overflow-hidden cursor-grab active:cursor-grabbing px-3 sm:px-4"
         style={{ 
           WebkitTapHighlightColor: 'transparent',
         }}
       >
         <div
           ref={ref}
-          className={cn("flex", orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col", className)}
+          className={cn("flex", orientation === "horizontal" ? "-ml-2 md:-ml-3" : "-mt-4 flex-col", className)}
           style={{
             WebkitTapHighlightColor: 'transparent',
           }}
@@ -176,7 +177,7 @@ CarouselItem.displayName = "CarouselItem";
 
 const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProps<typeof Button>>(
   ({ className, variant = "outline", size = "icon", ...props }, ref) => {
-    const { orientation, scrollPrev, canScrollPrev } = useCarousel();
+    const { orientation, scrollPrev, canScrollPrev, opts } = useCarousel();
 
     return (
       <Button
@@ -186,12 +187,15 @@ const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProp
         className={cn(
           "absolute h-8 w-8 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
           orientation === "horizontal"
-            ? "-left-12 top-1/2 -translate-y-1/2"
+            ? "left-2 md:left-4 top-1/2 -translate-y-1/2"
             : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
           className,
         )}
         disabled={!canScrollPrev}
-        onClick={scrollPrev}
+        onClick={() => {
+          const isRtl = opts?.direction === "rtl";
+          isRtl ? scrollNext() : scrollPrev();
+        }}
         style={{ 
           WebkitTapHighlightColor: 'transparent',
         }}
@@ -207,7 +211,7 @@ CarouselPrevious.displayName = "CarouselPrevious";
 
 const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<typeof Button>>(
   ({ className, variant = "outline", size = "icon", ...props }, ref) => {
-    const { orientation, scrollNext, canScrollNext } = useCarousel();
+    const { orientation, scrollNext, canScrollNext, opts } = useCarousel();
 
     return (
       <Button
@@ -217,12 +221,15 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
         className={cn(
           "absolute h-8 w-8 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
           orientation === "horizontal"
-            ? "-right-12 top-1/2 -translate-y-1/2"
+            ? "right-2 md:right-4 top-1/2 -translate-y-1/2"
             : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
           className,
         )}
         disabled={!canScrollNext}
-        onClick={scrollNext}
+        onClick={() => {
+          const isRtl = opts?.direction === "rtl";
+          isRtl ? scrollPrev() : scrollNext();
+        }}
         style={{ 
           WebkitTapHighlightColor: 'transparent',
         }}

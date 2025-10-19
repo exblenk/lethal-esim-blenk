@@ -19,7 +19,7 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
   
   return (
     <Card 
-      className={`relative overflow-hidden h-full transform-gpu will-change-transform transition-transform duration-300 ease-out rounded-xl ${
+      className={`relative overflow-hidden h-full transform-gpu will-change-transform transition-transform duration-300 ease-out rounded-2xl md:rounded-xl ${
         isActive ? 'shadow-elegant' : 'shadow-md'
       } ${popular ? 'border-accent border-2 glow-gold' : ''}`}
       style={{ 
@@ -34,7 +34,7 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
       )}
       
       {image && (
-        <div className="h-40 sm:h-auto sm:aspect-[4/3] overflow-hidden rounded-t-xl">
+        <div className="h-48 sm:h-auto sm:aspect-[4/3] overflow-hidden rounded-t-2xl md:rounded-t-xl">
           <img 
             src={image} 
             alt={`${country} eSIM`}
