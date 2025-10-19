@@ -1,36 +1,10 @@
 import PricingCard from "./PricingCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Carousel, CarouselContent, CarouselItem, CarouselApi } from "@/components/ui/carousel";
 import stcImage from "@/assets/stc-esim-new.jpg";
 import egyptImage from "@/assets/orange-esim-new.jpg";
 import pricingBg from "@/assets/pricing-background.png";
-import { useEffect, useState } from "react";
 
 const Pricing = () => {
-  const [saudiApi, setSaudiApi] = useState<CarouselApi>();
-  const [egyptApi, setEgyptApi] = useState<CarouselApi>();
-  const [saudiCurrent, setSaudiCurrent] = useState(0);
-  const [egyptCurrent, setEgyptCurrent] = useState(0);
-
-  useEffect(() => {
-    if (!saudiApi) return;
-    
-    setSaudiCurrent(saudiApi.selectedScrollSnap());
-    
-    saudiApi.on("select", () => {
-      setSaudiCurrent(saudiApi.selectedScrollSnap());
-    });
-  }, [saudiApi]);
-
-  useEffect(() => {
-    if (!egyptApi) return;
-    
-    setEgyptCurrent(egyptApi.selectedScrollSnap());
-    
-    egyptApi.on("select", () => {
-      setEgyptCurrent(egyptApi.selectedScrollSnap());
-    });
-  }, [egyptApi]);
   
   const saudiPlans = [
     {
@@ -99,7 +73,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="pricing" className="relative py-20 px-4 overflow-hidden">
+    <section id="pricing" className="relative py-20 overflow-hidden">
       <div 
         className="absolute inset-0 z-0"
         style={{
@@ -110,12 +84,12 @@ const Pricing = () => {
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background z-0" />
-      <div className="container mx-auto relative z-10">
+      <div className="relative z-10 px-5 md:px-8">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             باقاتنا <span className="gradient-gold bg-clip-text text-transparent">المميزة</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground">
             اختر الباقة المناسبة لك - كلما زادت المدة، زاد الخصم
           </p>
         </div>
@@ -127,71 +101,39 @@ const Pricing = () => {
           </TabsList>
           
           <TabsContent value="saudi" className="data-[state=active]:animate-fade-in">
-            <Carousel 
-              setApi={setSaudiApi}
-              opts={{
-                align: "start",
-                loop: true,
-                direction: "rtl",
-                skipSnaps: false
-              }}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-4">
-                {saudiPlans.map((plan, index) => (
-                  <CarouselItem 
-                    key={index} 
-                    className="pl-4 basis-full md:basis-[48%] lg:basis-[32%]"
-                  >
-                    <PricingCard
-                      country="السعودية - STC"
-                      duration={plan.duration}
-                      price={plan.price}
-                      oldPrice={plan.oldPrice}
-                      currency="ريال"
-                      features={plan.features}
-                      popular={plan.popular}
-                      image={stcImage}
-                      isActive={saudiCurrent === index}
-                    />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+              {saudiPlans.map((plan, index) => (
+                <PricingCard
+                  key={index}
+                  country="السعودية - STC"
+                  duration={plan.duration}
+                  price={plan.price}
+                  oldPrice={plan.oldPrice}
+                  currency="ريال"
+                  features={plan.features}
+                  popular={plan.popular}
+                  image={stcImage}
+                />
+              ))}
+            </div>
           </TabsContent>
           
           <TabsContent value="egypt" className="data-[state=active]:animate-fade-in">
-            <Carousel 
-              setApi={setEgyptApi}
-              opts={{
-                align: "start",
-                loop: true,
-                direction: "rtl",
-                skipSnaps: false
-              }}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-4">
-                {egyptPlans.map((plan, index) => (
-                  <CarouselItem 
-                    key={index} 
-                    className="pl-4 basis-full md:basis-[48%] lg:basis-[32%]"
-                  >
-                    <PricingCard
-                      country="مصر - Orange"
-                      duration={plan.duration}
-                      price={plan.price}
-                      oldPrice={plan.oldPrice}
-                      currency="جنيه"
-                      features={plan.features}
-                      popular={plan.popular}
-                      image={egyptImage}
-                      isActive={egyptCurrent === index}
-                    />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+              {egyptPlans.map((plan, index) => (
+                <PricingCard
+                  key={index}
+                  country="مصر - Orange"
+                  duration={plan.duration}
+                  price={plan.price}
+                  oldPrice={plan.oldPrice}
+                  currency="جنيه"
+                  features={plan.features}
+                  popular={plan.popular}
+                  image={egyptImage}
+                />
+              ))}
+            </div>
           </TabsContent>
         </Tabs>
       </div>

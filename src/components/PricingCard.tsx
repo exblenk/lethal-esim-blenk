@@ -34,11 +34,11 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
       )}
       
       {image && (
-        <div className="aspect-[4/3] overflow-hidden rounded-t-xl">
+        <div className="overflow-hidden rounded-t-xl">
           <img 
             src={image} 
             alt={`${country} eSIM`}
-            className="w-full h-full object-cover"
+            className="w-full h-[200px] object-cover hover:scale-105 transition-transform duration-300"
             loading="lazy"
           />
         </div>
