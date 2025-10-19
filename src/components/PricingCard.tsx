@@ -34,7 +34,7 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
       )}
       
       {image && (
-        <div className="aspect-[3/2] overflow-hidden rounded-t-xl">
+        <div className="aspect-[4/3] overflow-hidden rounded-t-xl">
           <img 
             src={image} 
             alt={`${country} eSIM`}
@@ -44,40 +44,40 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
         </div>
       )}
       
-      <CardHeader className="pb-3">
-        <div className="flex items-center justify-between gap-2">
-          <CardTitle className="text-lg md:text-xl">{country}</CardTitle>
-          <div className="flex flex-col items-end">
-            {oldPrice && (
-              <div className="text-xs md:text-sm text-muted-foreground line-through">
-                {oldPrice} {currency}
-              </div>
-            )}
-            <div className="text-xl md:text-2xl font-bold gradient-gold bg-clip-text text-transparent whitespace-nowrap">
-              {price} {currency}
+      <CardHeader className="pb-4 space-y-3">
+        <div className="text-center">
+          <CardTitle className="text-xl md:text-2xl mb-2">{country}</CardTitle>
+          <CardDescription className="text-base md:text-lg font-medium">{duration}</CardDescription>
+        </div>
+        <div className="text-center">
+          {oldPrice && (
+            <div className="text-sm text-muted-foreground line-through mb-1">
+              {oldPrice} {currency}
             </div>
+          )}
+          <div className="text-3xl md:text-4xl font-bold gradient-gold bg-clip-text text-transparent">
+            {price} {currency}
           </div>
         </div>
-        <CardDescription className="text-sm md:text-base">{duration}</CardDescription>
       </CardHeader>
       
-      <CardContent className="space-y-3 pt-0">
-        <ul className="space-y-1.5">
+      <CardContent className="space-y-4 pt-0">
+        <ul className="space-y-2.5">
           {features.map((feature, index) => (
-            <li key={index} className="flex items-start gap-2">
-              <Check className="w-3 h-3 md:w-3.5 md:h-3.5 text-accent mt-0.5 flex-shrink-0" />
-              <span className="text-xs md:text-sm">{feature}</span>
+            <li key={index} className="flex items-center gap-3">
+              <Check className="w-5 h-5 text-accent flex-shrink-0" />
+              <span className="text-sm md:text-base">{feature}</span>
             </li>
           ))}
         </ul>
         
         <Button 
           variant="whatsapp" 
-          className="w-full text-sm md:text-base"
+          className="w-full text-base md:text-lg h-12 md:h-14 font-semibold"
           asChild
         >
           <a href={`https://wa.me/201060103226?text=${whatsappMessage}`}>
-            اطلب الآن
+            اطلب الآن عبر واتساب
           </a>
         </Button>
       </CardContent>

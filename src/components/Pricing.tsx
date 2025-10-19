@@ -1,6 +1,6 @@
 import PricingCard from "./PricingCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselApi } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselApi } from "@/components/ui/carousel";
 import stcImage from "@/assets/stc-esim-new.jpg";
 import egyptImage from "@/assets/orange-esim-new.jpg";
 import pricingBg from "@/assets/pricing-background.png";
@@ -31,6 +31,7 @@ const Pricing = () => {
       setEgyptCurrent(egyptApi.selectedScrollSnap());
     });
   }, [egyptApi]);
+  
   const saudiPlans = [
     {
       duration: "يومين",
@@ -129,19 +130,18 @@ const Pricing = () => {
             <Carousel 
               setApi={setSaudiApi}
               opts={{
-                align: "center",
-                loop: false,
+                align: "start",
+                loop: true,
                 direction: "rtl",
-                containScroll: "trimSnaps",
                 skipSnaps: false
               }}
               className="w-full"
             >
-              <CarouselContent className="-ml-2 md:-ml-3 lg:-ml-4" style={{ touchAction: 'pan-y pinch-zoom' }}>
+              <CarouselContent className="-ml-4">
                 {saudiPlans.map((plan, index) => (
                   <CarouselItem 
                     key={index} 
-                    className="pl-2 md:pl-3 lg:pl-4 basis-[32%] sm:basis-[32%] md:basis-[45%] lg:basis-[38%] xl:basis-[32%]"
+                    className="pl-4 basis-[85%] md:basis-[48%] lg:basis-[32%]"
                   >
                     <PricingCard
                       country="السعودية - STC"
@@ -157,10 +157,6 @@ const Pricing = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <div className="flex justify-center gap-4 mt-12">
-                <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110 shadow-elegant" />
-                <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110 shadow-elegant" />
-              </div>
             </Carousel>
           </TabsContent>
           
@@ -168,19 +164,18 @@ const Pricing = () => {
             <Carousel 
               setApi={setEgyptApi}
               opts={{
-                align: "center",
-                loop: false,
+                align: "start",
+                loop: true,
                 direction: "rtl",
-                containScroll: "trimSnaps",
                 skipSnaps: false
               }}
               className="w-full"
             >
-              <CarouselContent className="-ml-2 md:-ml-3 lg:-ml-4" style={{ touchAction: 'pan-y pinch-zoom' }}>
+              <CarouselContent className="-ml-4">
                 {egyptPlans.map((plan, index) => (
                   <CarouselItem 
                     key={index} 
-                    className="pl-2 md:pl-3 lg:pl-4 basis-[32%] sm:basis-[32%] md:basis-[45%] lg:basis-[38%] xl:basis-[32%]"
+                    className="pl-4 basis-[85%] md:basis-[48%] lg:basis-[32%]"
                   >
                     <PricingCard
                       country="مصر - Orange"
@@ -196,10 +191,6 @@ const Pricing = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <div className="flex justify-center gap-4 mt-12">
-                <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110 shadow-elegant" />
-                <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110 shadow-elegant" />
-              </div>
             </Carousel>
           </TabsContent>
         </Tabs>
