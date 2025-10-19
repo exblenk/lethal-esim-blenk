@@ -141,7 +141,7 @@ const Pricing = () => {
                 {saudiPlans.map((plan, index) => (
                   <CarouselItem 
                     key={index} 
-                    className="pl-4 basis-[85%] md:basis-[48%] lg:basis-[32%]"
+                    className="pl-4 basis-full md:basis-[48%] lg:basis-[32%]"
                   >
                     <PricingCard
                       country="السعودية - STC"
@@ -175,7 +175,7 @@ const Pricing = () => {
                 {egyptPlans.map((plan, index) => (
                   <CarouselItem 
                     key={index} 
-                    className="pl-4 basis-[85%] md:basis-[48%] lg:basis-[32%]"
+                    className="pl-4 basis-full md:basis-[48%] lg:basis-[32%]"
                   >
                     <PricingCard
                       country="مصر - Orange"

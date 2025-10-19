@@ -43,10 +43,10 @@ const PaymentMethods = () => {
           {methods.map((method, index) => (
             <div 
               key={index}
-              className="flex flex-col items-center gap-3 animate-scale-in min-w-[100px] md:min-w-[120px]"
+              className="flex flex-col items-center gap-3 animate-scale-in min-w-[80px] md:min-w-[120px]"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-24 h-24 md:w-28 md:h-28 flex items-center justify-center bg-white rounded-lg shadow-md border border-border/20 p-4 hover:shadow-lg hover:scale-105 hover:border-accent/30 transition-all duration-300">
+              <div className="w-16 h-16 md:w-28 md:h-28 flex items-center justify-center bg-white rounded-lg shadow-md border border-border/20 p-3 hover:shadow-lg hover:scale-105 hover:border-accent/30 transition-all duration-300">
                 <img 
                   src={method.logo} 
                   alt={`${method.name} - ${method.description}`}
