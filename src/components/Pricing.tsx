@@ -101,7 +101,7 @@ const Pricing = () => {
           </TabsList>
           
           <TabsContent value="saudi" className="data-[state=active]:animate-fade-in">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               {saudiPlans.map((plan, index) => (
                 <PricingCard
                   key={index}
@@ -119,7 +119,7 @@ const Pricing = () => {
           </TabsContent>
           
           <TabsContent value="egypt" className="data-[state=active]:animate-fade-in">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               {egyptPlans.map((plan, index) => (
                 <PricingCard
                   key={index}
