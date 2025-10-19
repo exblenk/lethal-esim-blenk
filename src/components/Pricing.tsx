@@ -137,11 +137,11 @@ const Pricing = () => {
               }}
               className="w-full"
             >
-              <CarouselContent className="-ml-2 md:-ml-4" style={{ touchAction: 'pan-y pinch-zoom' }}>
+              <CarouselContent className="-ml-2 md:-ml-3 lg:-ml-4" style={{ touchAction: 'pan-y pinch-zoom' }}>
                 {saudiPlans.map((plan, index) => (
                   <CarouselItem 
                     key={index} 
-                    className="pl-2 md:pl-4 basis-[85%] md:basis-[70%] lg:basis-[60%] xl:basis-[50%]"
+                    className="pl-2 md:pl-3 lg:pl-4 basis-[82%] sm:basis-[75%] md:basis-[60%] lg:basis-[45%] xl:basis-[38%]"
                   >
                     <div className={`transition-all duration-300 ${saudiCurrent === index ? 'scale-105' : 'scale-95 opacity-80'}`}>
                       <PricingCard
@@ -159,7 +159,7 @@ const Pricing = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <div className="flex justify-center gap-4 mt-8">
+              <div className="flex justify-center gap-4 mt-12">
                 <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110 shadow-elegant" />
                 <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110 shadow-elegant" />
               </div>
@@ -178,11 +178,11 @@ const Pricing = () => {
               }}
               className="w-full"
             >
-              <CarouselContent className="-ml-2 md:-ml-4" style={{ touchAction: 'pan-y pinch-zoom' }}>
+              <CarouselContent className="-ml-2 md:-ml-3 lg:-ml-4" style={{ touchAction: 'pan-y pinch-zoom' }}>
                 {egyptPlans.map((plan, index) => (
                   <CarouselItem 
                     key={index} 
-                    className="pl-2 md:pl-4 basis-[85%] md:basis-[70%] lg:basis-[60%] xl:basis-[50%]"
+                    className="pl-2 md:pl-3 lg:pl-4 basis-[82%] sm:basis-[75%] md:basis-[60%] lg:basis-[45%] xl:basis-[38%]"
                   >
                     <div className={`transition-all duration-300 ${egyptCurrent === index ? 'scale-105' : 'scale-95 opacity-80'}`}>
                       <PricingCard
@@ -200,7 +200,7 @@ const Pricing = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <div className="flex justify-center gap-4 mt-8">
+              <div className="flex justify-center gap-4 mt-12">
                 <CarouselNext className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110 shadow-elegant" />
                 <CarouselPrevious className="relative inset-0 translate-y-0 translate-x-0 h-12 w-12 rounded-full gradient-gold hover:glow-gold border-0 transition-all duration-300 hover:scale-110 shadow-elegant" />
               </div>

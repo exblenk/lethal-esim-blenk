@@ -19,7 +19,7 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
   
   return (
     <Card 
-      className={`relative overflow-hidden h-full transition-all duration-300 ${
+      className={`relative overflow-hidden h-full transition-all duration-300 rounded-xl ${
         isActive ? 'shadow-elegant scale-100' : 'shadow-md'
       } ${popular ? 'border-accent border-2 glow-gold' : ''}`}
       style={{ 
@@ -34,7 +34,7 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
       )}
       
       {image && (
-        <div className="aspect-square overflow-hidden">
+        <div className="aspect-[4/3] overflow-hidden rounded-t-xl">
           <img 
             src={image} 
             alt={`${country} eSIM`}
