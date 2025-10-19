@@ -2,7 +2,7 @@ import PricingCard from "./PricingCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselApi } from "@/components/ui/carousel";
 import stcImage from "@/assets/stc-esim-new.jpg";
-import egyptImage from "@/assets/orange-esim.jpg";
+import egyptImage from "@/assets/orange-esim-new.jpg";
 import pricingBg from "@/assets/pricing-background.png";
 import { useEffect, useState } from "react";
 
@@ -141,7 +141,7 @@ const Pricing = () => {
                 {saudiPlans.map((plan, index) => (
                   <CarouselItem 
                     key={index} 
-                    className="pl-2 md:pl-3 lg:pl-4 basis-[90%] sm:basis-[46%] md:basis-[60%] lg:basis-[45%] xl:basis-[38%]"
+                    className="pl-2 md:pl-3 lg:pl-4 basis-[32%] sm:basis-[32%] md:basis-[45%] lg:basis-[38%] xl:basis-[32%]"
                   >
                     <PricingCard
                       country="السعودية - STC"
@@ -180,7 +180,7 @@ const Pricing = () => {
                 {egyptPlans.map((plan, index) => (
                   <CarouselItem 
                     key={index} 
-                    className="pl-2 md:pl-3 lg:pl-4 basis-[90%] sm:basis-[46%] md:basis-[60%] lg:basis-[45%] xl:basis-[38%]"
+                    className="pl-2 md:pl-3 lg:pl-4 basis-[32%] sm:basis-[32%] md:basis-[45%] lg:basis-[38%] xl:basis-[32%]"
                   >
                     <PricingCard
                       country="مصر - Orange"
