@@ -1,6 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import madaLogo from "@/assets/mada-logo.png";
+import stcPayLogo from "@/assets/stc-pay-logo.png";
+import vodafoneLogo from "@/assets/vodafone-logo.png";
+import anbBarqLogo from "@/assets/anb-barq-logo.png";
 
 interface PricingCardProps {
   country: string;
@@ -34,7 +38,7 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
       )}
       
       {image && (
-        <div className="aspect-[4/3] overflow-hidden rounded-t-xl">
+        <div className="aspect-[5/2] overflow-hidden rounded-t-xl">
           <img 
             src={image} 
             alt={`${country} eSIM`}
@@ -80,6 +84,13 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
             اطلب الآن
           </a>
         </Button>
+        
+        <div className="flex items-center justify-center gap-2 pt-2">
+          <img src={madaLogo} alt="Mada" className="h-6 w-auto" />
+          <img src={stcPayLogo} alt="STC Pay" className="h-6 w-auto" />
+          <img src={vodafoneLogo} alt="Vodafone Cash" className="h-6 w-auto" />
+          <img src={anbBarqLogo} alt="InstaPay" className="h-6 w-auto" />
+        </div>
       </CardContent>
     </Card>
   );
