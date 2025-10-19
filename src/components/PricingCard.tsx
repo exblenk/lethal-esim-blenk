@@ -43,7 +43,7 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
         )}
         
         {/* المحتوى */}
-        <div className="flex-1 flex flex-col md:flex-row gap-4">
+        <div className="flex-1 flex flex-col md:flex-row gap-2 md:gap-3">
           {/* الميزات - على اليمين */}
           <div className="flex-1">
             <ul className="space-y-2">
