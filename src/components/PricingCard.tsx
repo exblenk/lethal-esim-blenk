@@ -19,8 +19,8 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
   
   return (
     <Card 
-      className={`relative overflow-hidden h-full transition-all duration-300 rounded-xl ${
-        isActive ? 'shadow-elegant scale-100' : 'shadow-md'
+      className={`relative overflow-hidden h-full transform-gpu will-change-transform transition-transform duration-300 ease-out rounded-2xl md:rounded-xl ${
+        isActive ? 'shadow-elegant' : 'shadow-md'
       } ${popular ? 'border-accent border-2 glow-gold' : ''}`}
       style={{ 
         WebkitTapHighlightColor: 'transparent',
@@ -34,12 +34,13 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
       )}
       
       {image && (
-        <div className="aspect-[4/3] overflow-hidden rounded-t-xl">
+        <div className="h-48 sm:h-auto sm:aspect-[4/3] overflow-hidden rounded-t-2xl md:rounded-t-xl">
           <img 
             src={image} 
             alt={`${country} eSIM`}
             className="w-full h-full object-cover"
             loading="lazy"
+            decoding="async"
           />
         </div>
       )}
@@ -53,7 +54,7 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
                 {oldPrice} {currency}
               </div>
             )}
-            <div className="text-xl md:text-2xl font-bold gradient-gold bg-clip-text text-transparent whitespace-nowrap">
+            <div className="text-lg sm:text-xl md:text-2xl font-bold gradient-gold bg-clip-text text-transparent leading-tight whitespace-normal sm:whitespace-nowrap break-words">
               {price} {currency}
             </div>
           </div>
