@@ -43,10 +43,24 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
         )}
         
         {/* المحتوى */}
-        <div className="flex-1 flex flex-col md:flex-row gap-2 md:gap-3">
-          {/* الميزات - على اليمين */}
+        <div className="flex-1 flex flex-col gap-3">
+          {/* المعلومات الأساسية - في الأعلى */}
+          <div className="text-right space-y-1">
+            <div className="font-bold text-lg">{country}</div>
+            <div className="text-muted-foreground">{duration}</div>
+            {oldPrice && (
+              <div className="text-sm text-muted-foreground line-through">
+                {oldPrice} {currency}
+              </div>
+            )}
+            <div className="text-2xl font-bold gradient-gold bg-clip-text text-transparent">
+              {price} {currency}
+            </div>
+          </div>
+          
+          {/* الميزات - في الأسفل */}
           <div className="flex-1">
-            <ul className="space-y-2">
+            <ul className="space-y-1.5">
               {features.map((feature, index) => (
                 <li key={index} className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-accent flex-shrink-0" />
@@ -56,31 +70,15 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
             </ul>
           </div>
           
-          {/* المعلومات الأساسية - على اليسار */}
-          <div className="flex flex-col items-end justify-between min-w-[140px]">
-            <div className="text-right space-y-1">
-              <div className="font-bold text-lg">{country}</div>
-              <div className="text-muted-foreground">{duration}</div>
-              {oldPrice && (
-                <div className="text-sm text-muted-foreground line-through">
-                  {oldPrice} {currency}
-                </div>
-              )}
-              <div className="text-2xl font-bold gradient-gold bg-clip-text text-transparent">
-                {price} {currency}
-              </div>
-            </div>
-            
-            <Button 
-              variant="whatsapp" 
-              className="w-full text-sm h-10 font-semibold mt-3"
-              asChild
-            >
-              <a href={`https://wa.me/201060103226?text=${whatsappMessage}`}>
-                اطلب الآن
-              </a>
-            </Button>
-          </div>
+          <Button 
+            variant="whatsapp" 
+            className="w-full text-sm h-10 font-semibold"
+            asChild
+          >
+            <a href={`https://wa.me/201060103226?text=${whatsappMessage}`}>
+              اطلب الآن
+            </a>
+          </Button>
         </div>
       </div>
     </Card>
