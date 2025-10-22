@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import { FaTiktok, FaInstagram } from "react-icons/fa";
 import heroImage from "@/assets/hero-background.png";
 
 const Hero = () => {
@@ -66,6 +67,29 @@ const Hero = () => {
               <span className="w-3 h-3 bg-accent rounded-full animate-pulse-glow" />
               <span>دعم ٢٤/٧</span>
             </div>
+          </div>
+
+          {/* قسم تابعنا */}
+          <div className="pt-6 flex items-center justify-center gap-3 text-base animate-fade-in">
+            <span className="text-foreground font-semibold">تابعنا</span>
+            <a 
+              href="https://www.tiktok.com/@exblenk?_t=ZS-90lSMs5RzWS&_r=1" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-foreground hover:text-accent transition-colors hover:scale-110 transform"
+              aria-label="TikTok"
+            >
+              <FaTiktok className="w-6 h-6" />
+            </a>
+            <a 
+              href="https://www.instagram.com/exblenk?igsh=b2Z4dnF5MmpsMmh2&utm_source=qr" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-foreground hover:text-accent transition-colors hover:scale-110 transform"
+              aria-label="Instagram"
+            >
+              <FaInstagram className="w-6 h-6" />
+            </a>
           </div>
         </div>
       </div>
