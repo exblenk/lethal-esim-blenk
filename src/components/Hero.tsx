@@ -70,25 +70,25 @@ const Hero = () => {
           </div>
 
           {/* قسم تابعنا */}
-          <div className="pt-6 flex items-center justify-center gap-3 text-base animate-fade-in">
-            <span className="text-foreground font-semibold">تابعنا</span>
+          <div className="pt-6 flex items-center justify-center gap-4 text-xl animate-fade-in">
+            <span className="text-foreground font-bold">تابعنا</span>
             <a 
               href="https://www.tiktok.com/@exblenk?_t=ZS-90lSMs5RzWS&_r=1" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-foreground hover:text-accent transition-colors hover:scale-110 transform"
+              className="text-foreground hover:text-accent transition-all hover:scale-110 transform"
               aria-label="TikTok"
             >
-              <FaTiktok className="w-6 h-6" />
+              <FaTiktok className="w-8 h-8" />
             </a>
             <a 
               href="https://www.instagram.com/exblenk?igsh=b2Z4dnF5MmpsMmh2&utm_source=qr" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-foreground hover:text-accent transition-colors hover:scale-110 transform"
+              className="text-foreground hover:text-accent transition-all hover:scale-110 transform"
               aria-label="Instagram"
             >
-              <FaInstagram className="w-6 h-6" />
+              <FaInstagram className="w-8 h-8" />
             </a>
           </div>
         </div>
