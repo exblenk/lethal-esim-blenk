@@ -29,36 +29,22 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
         </div>
       )}
       
-      <div className="flex flex-col md:flex-row gap-4 p-4">
+      <div className="p-4 space-y-4">
         {/* الصورة */}
         {image && (
-          <div className="flex-shrink-0">
+          <div className="w-full">
             <img 
               src={image} 
               alt={`${country} eSIM`}
-              className="w-full md:w-[180px] h-[140px] object-cover rounded-lg"
+              className="w-full h-[140px] object-cover rounded-lg"
               loading="lazy"
             />
           </div>
         )}
         
-        {/* المحتوى */}
-        <div className="flex-1 flex flex-col gap-3">
-          {/* المعلومات الأساسية - في الأعلى */}
-          <div className="text-right space-y-1">
-            <div className="font-bold text-lg">{country}</div>
-            <div className="text-muted-foreground">{duration}</div>
-            {oldPrice && (
-              <div className="text-sm text-muted-foreground line-through">
-                {oldPrice} {currency}
-              </div>
-            )}
-            <div className="text-2xl font-bold gradient-gold bg-clip-text text-transparent">
-              {price} {currency}
-            </div>
-          </div>
-          
-          {/* الميزات - في الأسفل */}
+        {/* المحتوى - تقسيم بين اليمين واليسار */}
+        <div className="flex flex-row gap-4">
+          {/* الميزات - على اليسار */}
           <div className="flex-1">
             <ul className="space-y-1.5">
               {features.map((feature, index) => (
@@ -70,16 +56,31 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
             </ul>
           </div>
           
-          <Button 
-            variant="whatsapp" 
-            className="w-full text-sm h-10 font-semibold"
-            asChild
-          >
-            <a href={`https://wa.me/201060103226?text=${whatsappMessage}`}>
-              اطلب الآن
-            </a>
-          </Button>
+          {/* المعلومات الأساسية - على اليمين */}
+          <div className="text-right space-y-1 min-w-[140px]">
+            <div className="font-bold text-lg">{country}</div>
+            <div className="text-muted-foreground text-sm">{duration}</div>
+            {oldPrice && (
+              <div className="text-sm text-muted-foreground line-through">
+                {oldPrice} {currency}
+              </div>
+            )}
+            <div className="text-2xl font-bold gradient-gold bg-clip-text text-transparent">
+              {price} {currency}
+            </div>
+          </div>
         </div>
+        
+        {/* زر الطلب */}
+        <Button 
+          variant="whatsapp" 
+          className="w-full text-sm h-10 font-semibold"
+          asChild
+        >
+          <a href={`https://wa.me/201060103226?text=${whatsappMessage}`}>
+            اطلب الآن
+          </a>
+        </Button>
       </div>
     </Card>
   );
