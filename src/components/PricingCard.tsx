@@ -43,9 +43,9 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
         )}
         
         {/* المحتوى - تقسيم بين اليمين واليسار */}
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-6">
           {/* المعلومات الأساسية - على اليمين */}
-          <div className="text-right space-y-1 min-w-[140px]">
+          <div className="text-right space-y-1 min-w-[160px]">
             <div className="font-bold text-lg">{country}</div>
             <div className="text-foreground font-medium">{duration}</div>
             {oldPrice && (
@@ -59,7 +59,7 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
           </div>
           
           {/* الميزات - على اليسار */}
-          <div className="flex-1">
+          <div className="flex-1 pr-2">
             <ul className="space-y-1.5">
               {features.map((feature, index) => (
                 <li key={index} className="flex items-center gap-2">
