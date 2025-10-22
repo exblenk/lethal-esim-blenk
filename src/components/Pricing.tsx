@@ -1,5 +1,6 @@
 import PricingCard from "./PricingCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { FaTiktok, FaInstagram } from "react-icons/fa";
 import stcImage from "@/assets/stc-esim-new.jpg";
 import egyptImage from "@/assets/orange-esim-new.jpg";
 import pricingBg from "@/assets/pricing-background.png";
@@ -89,9 +90,32 @@ const Pricing = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             باقاتنا <span className="gradient-gold bg-clip-text text-transparent">المميزة</span>
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-muted-foreground mb-6">
             اختر الباقة المناسبة لك - كلما زادت المدة، زاد الخصم
           </p>
+          
+          {/* قسم تابعنا */}
+          <div className="flex items-center justify-center gap-3 text-lg">
+            <span className="text-foreground font-semibold">تابعنا</span>
+            <a 
+              href="https://www.tiktok.com/@exblenk?_t=ZS-90lSMs5RzWS&_r=1" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-foreground hover:text-accent transition-colors"
+              aria-label="TikTok"
+            >
+              <FaTiktok className="w-6 h-6" />
+            </a>
+            <a 
+              href="https://www.instagram.com/exblenk?igsh=b2Z4dnF5MmpsMmh2&utm_source=qr" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-foreground hover:text-accent transition-colors"
+              aria-label="Instagram"
+            >
+              <FaInstagram className="w-6 h-6" />
+            </a>
+          </div>
         </div>
 
         <Tabs defaultValue="saudi" className="w-full" dir="rtl">
