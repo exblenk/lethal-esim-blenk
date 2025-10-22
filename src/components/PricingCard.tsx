@@ -44,6 +44,20 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
         
         {/* المحتوى - تقسيم بين اليمين واليسار */}
         <div className="flex flex-row gap-4">
+          {/* المعلومات الأساسية - على اليمين */}
+          <div className="text-right space-y-1 min-w-[140px]">
+            <div className="font-bold text-lg">{country}</div>
+            <div className="text-foreground font-medium">{duration}</div>
+            {oldPrice && (
+              <div className="text-sm text-muted-foreground line-through">
+                {oldPrice} {currency}
+              </div>
+            )}
+            <div className="text-2xl font-bold gradient-gold bg-clip-text text-transparent">
+              {price} {currency}
+            </div>
+          </div>
+          
           {/* الميزات - على اليسار */}
           <div className="flex-1">
             <ul className="space-y-1.5">
@@ -54,20 +68,6 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
                 </li>
               ))}
             </ul>
-          </div>
-          
-          {/* المعلومات الأساسية - على اليمين */}
-          <div className="text-right space-y-1 min-w-[140px]">
-            <div className="font-bold text-lg">{country}</div>
-            <div className="text-muted-foreground text-sm">{duration}</div>
-            {oldPrice && (
-              <div className="text-sm text-muted-foreground line-through">
-                {oldPrice} {currency}
-              </div>
-            )}
-            <div className="text-2xl font-bold gradient-gold bg-clip-text text-transparent">
-              {price} {currency}
-            </div>
           </div>
         </div>
         
