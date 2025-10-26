@@ -26,7 +26,7 @@ const Header = () => {
           <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-smooth">
             <img src={logo} alt="ExBlenk Logo" className="h-12 w-12" />
             <span className="text-2xl font-bold">
-              <span className="text-[#D4A574]">Ex</span>
+              <span className="text-slate-300 dark:text-slate-200">Ex</span>
               <span className="text-secondary-foreground">Blenk</span>
             </span>
           </a>
