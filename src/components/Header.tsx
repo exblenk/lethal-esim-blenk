@@ -49,7 +49,7 @@ const Header = () => {
               className="hidden sm:flex"
               asChild
             >
-              <a href="https://wa.me/201060103226">
+              <a href="https://wa.me/966575809899">
                 <MessageCircle className="ml-2" />
                 واتساب
               </a>
@@ -78,7 +78,7 @@ const Header = () => {
                     className="mt-4"
                     asChild
                   >
-                    <a href="https://wa.me/201060103226">
+                    <a href="https://wa.me/966575809899">
                       <MessageCircle className="ml-2" />
                       تواصل عبر واتساب
                     </a>

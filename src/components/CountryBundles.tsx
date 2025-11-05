@@ -110,7 +110,7 @@ const CountryBundles = () => {
                     className="w-full"
                     asChild
                   >
-                    <a href="https://wa.me/201060103226?text=أريد الاستفسار عن باقات دول الشرق الأوسط">
+                    <a href="https://wa.me/966575809899?text=أريد الاستفسار عن باقات دول الشرق الأوسط">
                       <MessageCircle className="ml-2" />
                       اسأل عن دولتك
                     </a>

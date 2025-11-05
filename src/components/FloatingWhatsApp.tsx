@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 const FloatingWhatsApp = () => {
   return (
     <a 
-      href="https://wa.me/201060103226?text=مرحباً، أريد الاستفسار عن خدماتكم"
+      href="https://wa.me/966575809899?text=مرحباً، أريد الاستفسار عن خدماتكم"
       className="fixed bottom-6 left-6 z-50 animate-float"
       aria-label="تواصل عبر واتساب"
     >

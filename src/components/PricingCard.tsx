@@ -77,7 +77,7 @@ const PricingCard = ({ country, duration, price, oldPrice, currency, features, p
           className="w-full text-sm h-10 font-semibold"
           asChild
         >
-          <a href={`https://wa.me/201060103226?text=${whatsappMessage}`}>
+          <a href={`https://wa.me/966575809899?text=${whatsappMessage}`}>
             اطلب الآن
           </a>
         </Button>

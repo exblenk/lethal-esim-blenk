@@ -45,7 +45,7 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-4">تواصل معنا</h3>
             <div className="space-y-3">
               <a 
-                href="https://wa.me/201060103226"
+                href="https://wa.me/966575809899"
                 className="flex items-center gap-2 text-muted-foreground hover:text-[#25D366] transition-smooth"
               >
                 <MessageCircle className="w-5 h-5" />

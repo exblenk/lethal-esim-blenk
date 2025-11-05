@@ -24,7 +24,7 @@ const ContactSection = () => {
               className="w-full"
               asChild
             >
-              <a href="https://wa.me/201060103226">
+              <a href="https://wa.me/966575809899">
                 تواصل الآن
               </a>
             </Button>
@@ -72,7 +72,7 @@ const ContactSection = () => {
               size="lg"
               asChild
             >
-              <a href="https://wa.me/201060103226?text=لدي سؤال عن خدماتكم">
+              <a href="https://wa.me/966575809899?text=لدي سؤال عن خدماتكم">
                 <MessageCircle className="ml-2" />
                 ابدأ المحادثة
               </a>

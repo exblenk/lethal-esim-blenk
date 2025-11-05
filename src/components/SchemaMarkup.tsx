@@ -10,12 +10,12 @@ const SchemaMarkup = () => {
       "logo": "https://lovable.app/logo.png",
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+201060103226",
+        "telephone": "+966575809899",
         "contactType": "customer service",
         "availableLanguage": ["ar", "en"]
       },
       "sameAs": [
-        "https://wa.me/201060103226",
+        "https://wa.me/966575809899",
         "https://t.me/ispott"
       ]
     };

@@ -40,7 +40,7 @@ const Hero = () => {
               className="w-full sm:w-auto text-lg px-8 py-6"
               asChild
             >
-              <a href="https://wa.me/201060103226?text=أريد الاستفسار عن شرائح eSIM">
+              <a href="https://wa.me/966575809899?text=أريد الاستفسار عن شرائح eSIM">
                 <MessageCircle className="ml-2" />
                 اطلب شريحتك الآن
               </a>
