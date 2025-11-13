@@ -22,19 +22,8 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20" dir="ltr">
+        <div className="flex items-center justify-between h-20">
           <div className="flex items-center gap-4">
-            <Button 
-              variant="whatsapp"
-              className="hidden sm:flex"
-              asChild
-            >
-              <a href="https://wa.me/966575809899">
-                <MessageCircle className="ml-2" />
-                واتساب
-              </a>
-            </Button>
-
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild className="md:hidden">
                 <Button variant="ghost" size="icon">
@@ -66,26 +55,37 @@ const Header = () => {
                 </nav>
               </SheetContent>
             </Sheet>
+
+            <nav className="hidden md:flex items-center gap-6">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-foreground hover:text-accent transition-smooth font-medium"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+
+            <Button 
+              variant="whatsapp"
+              className="hidden sm:flex"
+              asChild
+            >
+              <a href="https://wa.me/966575809899">
+                <MessageCircle className="ml-2" />
+                واتساب
+              </a>
+            </Button>
           </div>
 
-          <nav className="hidden md:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-foreground hover:text-accent transition-smooth font-medium"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
           <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-smooth">
-            <img src={logo} alt="ExBlenk Logo" className="h-12 w-12" />
             <span className="text-2xl font-bold">
               <span className="text-[#B87333]">Ex</span>
               <span className="text-secondary-foreground">Blenk</span>
             </span>
+            <img src={logo} alt="ExBlenk Logo" className="h-12 w-12" />
           </a>
         </div>
       </div>
