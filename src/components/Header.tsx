@@ -22,27 +22,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-smooth">
-            <img src={logo} alt="ExBlenk Logo" className="h-12 w-12" />
-            <span className="text-2xl font-bold">
-              <span className="text-[#B87333]">Ex</span>
-              <span className="text-secondary-foreground">Blenk</span>
-            </span>
-          </a>
-
-          <nav className="hidden md:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-foreground hover:text-accent transition-smooth font-medium"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
+        <div className="flex items-center justify-between h-20" dir="ltr">
           <div className="flex items-center gap-4">
             <Button 
               variant="whatsapp"
@@ -61,7 +41,7 @@ const Header = () => {
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-72">
+              <SheetContent side="left" className="w-72">
                 <nav className="flex flex-col gap-4 mt-8">
                   {navLinks.map((link) => (
                     <a
@@ -87,6 +67,26 @@ const Header = () => {
               </SheetContent>
             </Sheet>
           </div>
+
+          <nav className="hidden md:flex items-center gap-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-foreground hover:text-accent transition-smooth font-medium"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-smooth">
+            <img src={logo} alt="ExBlenk Logo" className="h-12 w-12" />
+            <span className="text-2xl font-bold">
+              <span className="text-[#B87333]">Ex</span>
+              <span className="text-secondary-foreground">Blenk</span>
+            </span>
+          </a>
         </div>
       </div>
     </header>
