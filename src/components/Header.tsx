@@ -23,6 +23,14 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
+          <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-smooth">
+            <img src={logo} alt="ExBlenk Logo" className="h-12 w-12" />
+            <span className="text-2xl font-bold">
+              <span className="text-[#B87333]">Ex</span>
+              <span className="text-secondary-foreground">Blenk</span>
+            </span>
+          </a>
+
           <div className="flex items-center gap-4">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild className="md:hidden">
@@ -79,14 +87,6 @@ const Header = () => {
               </a>
             </Button>
           </div>
-
-          <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-smooth">
-            <span className="text-2xl font-bold">
-              <span className="text-[#B87333]">Ex</span>
-              <span className="text-secondary-foreground">Blenk</span>
-            </span>
-            <img src={logo} alt="ExBlenk Logo" className="h-12 w-12" />
-          </a>
         </div>
       </div>
     </header>
